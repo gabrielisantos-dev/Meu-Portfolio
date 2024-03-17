@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Elegan';
+  src: url('./fonts/Cormorant_Garamond/CormorantGaramond-LightItalic.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #030518;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Elegan', serif;
+  font-size: 6rem;
+  font-weight: 50;
+  letter-spacing: 6px;
+  color: transparent;
+  text-shadow:  0 0 2px #E44F9C, 0 0 2px #1786F9, 0 0 2px white;
+  background: linear-gradient(45deg,white, #E44F9C, #1786F9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+  animation: typingAnimation 3s steps(20) forwards, glitchAnimation 0.1s 3.5s infinite alternate, electricityAnimation 1s 3.5s infinite alternate, disintegrateAnimation 5s 6s forwards;
+}
+.menu {
+  border-radius: 50%;
+  position: fixed;
+  top: 75px;
+  right: 120px;
+  cursor: pointer;
+  padding: 15px;
+  transition: box-shadow 1.1s cubic-bezier(.19, .22, 0.6);
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  background-color: #b531f2;
+  width: 35px;
+  height: 3px;
+  top: 50%;
+  left: 13px;
+  transition: .1s ease-in-out;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+  content: '';
+  display: block;
+  background-color: #f231a5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+.hamburguer::before {
+  top: -10px;
+}
+
+.hamburguer::after {
+  bottom: -10px;
+}
+
+input {
+  display: none;
+}
+
+input:checked ~ label .menu {
+  box-shadow: 0 0 0 15vw #00000221, 0 0 0 30vh #030518;
+}
+
+input:checked ~ ul {
+  opacity: 1;
+}
+input:checked ~ label .hamburguer {
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+input:checked ~ label .hamburguer::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
+ul {
+  position: absolute;
+  top: 25%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  opacity: 0;
+  transition: .25s 1s cubic-bezier(.1, 1, .22);
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-family: 'Elegan', serif;
+  letter-spacing: 2px;
+  color: rgb(252, 255, 255);
+  margin-right: 70px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f231a5;
+}
+
+@keyframes glitchAnimation {
+  0% {
+      transform: none;
+  }
+  20% {
+      transform: skew(0.5deg, -0.5deg) translate(2px, -2px);
+  }
+  40% {
+      transform: skew(-0.5deg, 0.5deg) translate(-2px, 2px);
+  }
+  60% {
+      transform: skew(0.5deg, -0.5deg) translate(2px, -2px);
+  }
+  80% {
+      transform: skew(-0.5deg, 0.5deg) translate(-2px, 2px);
+  }
+  100% {
+      transform: none;
+  }
+}
+
+@keyframes electricityAnimation {
+  0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 4px hsl(276, 74%, 74%);
+  }
+  50% {
+      opacity: 0.8;
+      text-shadow: 0 0 5px hsl(260, 23%, 97%), 0 0 5px #1786F9;
+  }
+}
+
+@keyframes disintegrateAnimation {
+  0% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+}
+
+.atom-button {
+  position: fixed;
+  left: 120px;
+  top: 69px;
+  cursor: pointer;
+}

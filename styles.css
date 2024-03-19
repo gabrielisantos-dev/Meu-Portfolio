@@ -17,23 +17,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./assets/background2\ \(2\).gif');
+  background-image: url('./assets/Cover.png');
   background-size: 100% 100%;
   text-align: center;
 }
 
 #name {
-  font-family: 'Elegan', serif;
+  font-family: 'Elegan', sans-serif;
   font-size: 10rem;
   font-weight: 50;
   color: transparent;
-  text-shadow: #f4f8b7a8 0 0 10px;
-  background: linear-gradient(#E44F9C, #1786F9);
+  background: rgb(207, 189, 233);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
-  animation: typingAnimation 3s steps(20) forwards, glitchAnimation 0.1s 3.5s infinite alternate, electricityAnimation 1s 3.5s infinite alternate, disintegrateAnimation 5s 6s forwards;
 }
 
 .menu {
@@ -124,47 +122,6 @@ a {
 
 a:hover {
   color: #f231a5;
-}
-
-@keyframes glitchAnimation {
-  0% {
-      transform: none;
-  }
-  20% {
-      transform: skew(0.5deg, -0.5deg) translate(2px, -2px);
-  }
-  40% {
-      transform: skew(-0.5deg, 0.5deg) translate(-2px, 2px);
-  }
-  60% {
-      transform: skew(0.5deg, -0.5deg) translate(2px, -2px);
-  }
-  80% {
-      transform: skew(-0.5deg, 0.5deg) translate(-2px, 2px);
-  }
-  100% {
-      transform: none;
-  }
-}
-
-@keyframes electricityAnimation {
-  0%, 100% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0.8;
-  }
-}
-
-@keyframes disintegrateAnimation {
-  0% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-  100% {
-      opacity: 0;
-      transform: translateY(50px);
-  }
 }
 
 .atom-button {

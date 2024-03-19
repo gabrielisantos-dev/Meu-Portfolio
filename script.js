@@ -1,5 +1,5 @@
 const nameElement = document.getElementById('name');
-const devName = 'Gabrieli Santos.';
+const devName = 'Gabrieli Santos';
 
 function typeWriter(text, i) {
   if (i < text.length) {
